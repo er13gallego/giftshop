@@ -1,0 +1,92 @@
+{
+  "app": {
+    "NAME": "SS Template",
+    "OK": "OK",
+    "CANCEL": "Cancel",
+    "CLOSE": "Close",
+    "EDIT": "Edit",
+    "REMOVE": "Remove",
+    "ADD": "Add",
+    "NEW": "New",
+    "DISCARD": "Discard Changes",
+    "SAVE": "Save",
+    "SAVE_SUCCESS": "Changes saved successfully.",
+    "RESET": "Reset",
+    "VERSION": "Version {{version}} ({{hash}})",
+    "YES": "Yes",
+    "NO": "No",
+    "BACK": "Back",
+    "SEARCH": "Search",
+    "NO_RESULTS": "No results to display.",
+    "SUBMIT": "Submit",
+    "CLEAR": "Clear",
+    "LOG_OUT": "Log Out",
+    "PAGE_INFO": "Showing {{ from }} to {{ to }} of {{ total }}",
+    "HOME": "Home",
+    "DOWNLOAD": "Download",
+    "DATE_FORMAT": "DD-MM-YYYY"
+  },
+  "errors": {
+    "0": "Server is unreachable",
+    "400": "Bad request",
+    "401": "Forbidden",
+    "403": "Forbidden",
+    "404": "Not found",
+    "500": "Server error",
+    "504": "Gateway timeout",
+    "UNKNOWN": "Unknown error",
+    "CODE": "Error code: {{ code }}"
+  },
+  "validations": {
+    "REQUIRED": "This field is required.",
+    "MAX_VALUE": "The field's max value is {{requiredValue}}, but actual value is {{actualValue}}.",
+    "MIN_VALUE": "The field's min value is {{requiredValue}}, but actual value is {{actualValue}}.",
+    "MIN_LENGTH": "The field's min length is {{requiredLength}}, but actual length is {{actualLength}}.",
+    "MAX_LENGTH": "The field's max length is {{requiredLength}}, but actual length is {{actualLength}}.",
+    "INVALID_EMAIL": "Please enter a valid e-mail.",
+    "INVALID_PHONE": "Invalid phone number.",
+    "INVALID_FILE_EXTENSION": "Invalid file extension.",
+    "INVALID_FILE_TYPE": "Invalid file type."
+  },
+  "auth": {
+    "login": {
+      "$TITLE": "Log In",
+      "LOG_IN": "Log In",
+      "LOCKED_OUT": "Account Locked Out",
+      "FORGOT_PASSWORD": "Forgot Password"
+    },
+    "forgotPassword": {
+      "$TITLE": "Forgot Password",
+      "CONFIRMATION": "Please check your email to reset your password."
+    },
+    "resetPassword": {
+      "$TITLE": "Reset Password",
+      "CONFIRMATION": "Your password has been reset."
+    },
+    "loginStatus": {
+      "0": "Failed",
+      "1": "Inactive",
+      "2": "Not Confirmed",
+      "3": "Requires Two-Factor",
+      "4": "Locked Out",
+      "5": "Password Expired",
+      "200": "Success",
+      "401": "Not Allowed"
+    },
+    "loginStatusDescription": {
+      "0": "Invalid credentials",
+      "1": "Account is inactive",
+      "2": "Account not confirmed",
+      "401": "Not allowed to log in"
+    }
+  },
+  "examples": {
+    "$TITLE": "Examples",
+    "NAME": "Name",
+    "EMAIL": "Email",
+    "ADD": "Add Example",
+    "EDIT": "Edit Example",
+    "DELETE": "Delete Example",
+    "CONFIRM_DELETE": "Are you sure you want to delete the example {{name}}?"
+  }
+}

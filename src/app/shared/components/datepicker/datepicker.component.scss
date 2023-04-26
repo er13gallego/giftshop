@@ -1,0 +1,17 @@
+.datepicker {
+  .clear-btn {
+    position: absolute;
+    right: 2rem;
+    line-height: 2;
+    z-index: 1000;
+    display: none;
+  }
+  &.clearable {
+    .clear-btn {
+      display: block;
+    }
+    & > input {
+      padding-right: 36px;
+    }
+  }
+}

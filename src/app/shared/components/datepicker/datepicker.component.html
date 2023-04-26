@@ -1,0 +1,13 @@
+<div class="input-group datepicker" [ngClass]="{clearable: clearable}">
+  <input class="form-control" [placeholder]="'app.DATE_FORMAT' | translate" name="dateInput" ngbDatepicker
+    [disabled]="disabled" (focus)="onFocus()" [id]="inputId">
+
+  <div class="input-group-append mb-0">
+    <button type="button" class="btn btn-sm btn-outline-primary" [disabled]="disabled" (click)="dateInput.toggle()">
+      <i class="fas fa-calendar-alt"></i>
+    </button>
+  </div>
+  <button type="button" class="btn btn-sm btn-transparent clear-btn" (click)="clear()">
+    <i class="fas fa-times"></i>
+  </button>
+</div>

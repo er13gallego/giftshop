@@ -1,0 +1,15 @@
+<div *ngIf="page">
+  <div class="d-flex align-items-center" *ngIf="page.total; else empty_results">
+    <div class="flex-fill" [hidden]="page.total === 0">
+      {{ 'app.PAGE_INFO' | translate: { from: from, to: to, total: page.total } }}
+    </div>
+    <div [hidden]="page.totalPages &lt; 2">
+      <ngb-pagination [collectionSize]="page.total" [(page)]="page.current" (pageSize)="page.pageSize"
+        (pageChange)="pageChange.emit($event)" [maxSize]="10" [boundaryLinks]="true"></ngb-pagination>
+    </div>
+  </div>
+</div>
+
+<ng-template #empty_results>
+  <div class="text-muted text-center">{{ 'app.NO_RESULTS' | translate }}</div>
+</ng-template>

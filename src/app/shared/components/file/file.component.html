@@ -1,0 +1,7 @@
+<div class="custom-file">
+  <input #input type="file" class="custom-file-input" [id]="id">
+  <label class="custom-file-label" [for]="id">
+    <span *ngIf="filename">{{ filename }}</span>
+    <span [hidden]="filename">Choose file</span>
+  </label>
+</div>

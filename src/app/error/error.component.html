@@ -1,0 +1,16 @@
+<div class="text-center mb-5 mt-5">
+  <ng-container *ngIf="knownError; else elseTemplate">
+    <div>
+      <i class="fa fa-plug fa-5x"></i>
+    </div>
+    <h1>{{ status | enum: 'errors' }}</h1>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div>
+      <i class="fa fa-error fa-5x"></i>
+    </div>
+    <h1>{{ 'errors.UNKNOWN' | translate }}</h1>
+    <p>{{ status | enum: 'errors' }}</p>
+  </ng-template>
+  <!-- <button type="button" class="btn btn-outline" (click)="reload()">Reload</button> -->
+</div>

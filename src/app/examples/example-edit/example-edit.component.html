@@ -1,0 +1,108 @@
+<div class="py-md-3">
+  <app-panel [loading]="loading">
+    <form (ngSubmit)="submit()" [formGroup]="form" autocomplete="off">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row form-group">
+            <label for="name" class="col-md-4 col-form-label required">{{
+              'examples.NAME' | translate
+            }}</label>
+            <div class="col-md-8">
+              <input
+                class="form-control"
+                id="name"
+                type="text"
+                formControlName="name"
+              />
+              <span
+                class="messages"
+                *ngIf="submitted &amp;&amp; form.controls.name.invalid"
+              >
+                <p
+                  *ngIf="form.controls.name.errors.required"
+                  class="text-danger error"
+                >
+                  {{ 'validations.REQUIRED' | translate }}
+                </p>
+                <p
+                  *ngIf="form.controls.name.errors.maxlength"
+                  class="text-danger error"
+                >
+                  {{
+                    'validations.MAX_LENGTH'
+                      | translate
+                        : {
+                            requiredLength:
+                              form.controls.name.errors.maxlength
+                                .requiredLength,
+                            actualLength:
+                              form.controls.name.errors.maxlength.actualLength
+                          }
+                  }}
+                </p>
+              </span>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <label for="email" class="col-md-4 col-form-label required">{{
+              'examples.EMAIL' | translate
+            }}</label>
+            <div class="col-md-8">
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                formControlName="email"
+              />
+              <span
+                class="messages"
+                *ngIf="submitted &amp;&amp; form.controls.email.invalid"
+              >
+                <p
+                  *ngIf="form.controls.email.errors.required"
+                  class="text-danger error"
+                >
+                  {{ 'validations.REQUIRED' | translate }}
+                </p>
+                <p
+                  *ngIf="form.controls.email.errors.email"
+                  class="text-danger error"
+                >
+                  {{ 'validations.INVALID_EMAIL' | translate }}
+                </p>
+                <p
+                  *ngIf="form.controls.email.errors.maxlength"
+                  class="text-danger error"
+                >
+                  {{
+                    'validations.MAX_LENGTH'
+                      | translate
+                        : {
+                            requiredLength:
+                              form.controls.email.errors.maxlength
+                                .requiredLength,
+                            actualLength:
+                              form.controls.email.errors.maxlength.actualLength
+                          }
+                  }}
+                </p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col text-right form-actions">
+          <button type="submit" class="btn btn-primary">
+            {{ 'app.SAVE' | translate }}
+          </button>
+          <a [routerLink]="['../../']" class="btn btn-danger">{{
+            'app.CANCEL' | translate
+          }}</a>
+        </div>
+      </div>
+    </form>
+  </app-panel>
+</div>

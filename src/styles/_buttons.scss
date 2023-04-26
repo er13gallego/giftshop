@@ -1,0 +1,6 @@
+.btn+.btn, .btn+.d-inline-block {
+  margin-left: 0.5rem;
+}
+.dropdown-toggle.no-caret::after {
+  content: none;
+}

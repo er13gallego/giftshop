@@ -1,0 +1,31 @@
+.tablesort {
+  .tablesort-col {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding-right: 1.5rem;
+    position: relative;
+
+    &:after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      content: "\f0dc";
+      position: absolute;
+      right: 0.5rem;
+    }
+    &.asc:after {
+      content: "\f0de";
+    }
+    &.desc:after {
+      content: "\f0dd";
+    }
+  }
+}

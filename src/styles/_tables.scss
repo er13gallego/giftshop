@@ -1,0 +1,16 @@
+.table {
+  tbody {
+    td.table-actions {
+      padding-top: 0;
+      padding-bottom: 0;
+      vertical-align: middle;
+      width: 1%;
+      white-space: nowrap;
+      text-align: right;
+
+      .btn + .btn {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<div [ngSwitch]="currentStage">
+
+  <div *ngSwitchCase="Stage.Login">
+    <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off" class="form-signin">
+      <h3 class="text-left txt-primary">
+        {{ 'auth.login.$TITLE' | translate }}
+      </h3>
+      <hr />
+      <div class="form-group">
+        <input type="email" class="form-control" formControlName="email" placeholder="Email" autofocus />
+        <div class="messages" *ngIf="submitted &amp;&amp; form.controls.email.invalid">
+          <p [hidden]="!form.controls.email.errors.required" class="text-danger error">
+            {{ 'validations.REQUIRED' | translate }}
+          </p>
+          <p [hidden]="!form.controls.email.errors.email" class="text-danger error">
+            {{ 'validations.INVALID_EMAIL' | translate }}
+          </p>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+        <div class="messages" *ngIf="submitted &amp;&amp; form.controls.password.invalid">
+          <p [hidden]="!form.controls.password.errors.required" class="text-danger error">
+            {{ 'validations.REQUIRED' | translate }}
+          </p>
+        </div>
+      </div>
+      <p class="forgot-phone text-right">
+        <a class="text-right f-w-600 text-inverse" [routerLink]="['../forgot-password']">
+          {{ 'auth.login.FORGOT_PASSWORD' | translate }}
+        </a>
+      </p>
+      <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20"
+        [disabled]="submitting">
+        <i class="fa fa-refresh fa-spin fa-spin-1s fa-fw" [hidden]="!submitting"></i>
+        {{ 'auth.login.LOG_IN' | translate }}
+      </button>
+    </form>
+  </div>
+  <div *ngSwitchCase="Stage.Lockout">
+    <div class="text-center">
+      <i class="fa fa-lock fa-5x"></i>
+      <h4>{{ 'auth.login.LOCKED_OUT' | translate }}</h4>
+    </div>
+    <button type="button" class="btn btn-link" (click)="reset()">{{ 'app.BACK' | translate }}</button>
+  </div>
+  <div *ngSwitchCase="Stage.TwoFactor">
+
+  </div>
+</div>
+<div class="text-center">
+  <app-version></app-version>
+</div>
