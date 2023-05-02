@@ -27,7 +27,7 @@ export class ExampleListComponent extends ComponentBase
   }
 
   ngOnInit() {
-    this.getPage(1);
+    // this.getPage(1);
   }
 
   getPage(page: number) {
