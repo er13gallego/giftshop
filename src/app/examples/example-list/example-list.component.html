@@ -40,6 +40,35 @@
   </div>
 </app-panel> -->
 
-<div class="contain">
-  lmao
+<div class="content">
+  <div class="table_content">
+    <div class="search_bar">
+      <textarea placeholder="Search a product"></textarea>
+    </div>
+
+    <div class="product_list">lel</div>
+
+    <div class="paginator">
+      paginator
+      <!-- <app-pagination [page]="page" (pageChange)="getPage($event)"></app-pagination> -->
+    </div>
+  </div>
+
+  <div class="filters_menu">
+    <span class="clear_text">Clear</span>
+
+    <div class="filters">
+      <span *ngFor="let filter of filters" class="filter">
+        <div class="check_name">
+          <div>
+            <input type="checkbox" name="{{ filter.name }}" />
+          </div>
+
+          <div>
+            {{ filter.name }}
+          </div>
+        </div>
+      </span>
+    </div>
+  </div>
 </div>

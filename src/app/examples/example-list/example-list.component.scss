@@ -1,6 +1,124 @@
-.contain {
-    background-color: blue;
-    width: 65vw;
-    margin: 0;
-    padding: 0;
+.content {
+  width: 75vw;
+  height: 100vh;
+  margin: auto;
+  padding: 50px 0px 50px 0px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
 }
+
+.table_content {
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+}
+
+/*#region Filter*/
+
+.filters_menu {
+  margin-top: 120px;
+  position: relative;
+  border-top: solid 1px #ccc;
+  padding-top: 12px;
+}
+
+.clear_text {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4c75c4;
+  border-radius: 16px;
+  padding: 5px 12px 5px 12px;
+  transition-duration: 0.1s;
+
+  &:hover {
+    background-color: #4c74c42d;
+    cursor: pointer;
+  }
+}
+
+.filter {
+  display: block;
+  padding-left: 20px;
+  height: 30px;
+  border-radius: 4px;
+  transition-duration: 0.1s;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.filter:hover {
+  background-color: #597baf2f;
+}
+
+input[type='checkbox'] {
+  height: 15px;
+  width: 15px;
+  margin-right: 8px;
+  border: solid 2px #4c75c4;
+  border-radius: 3px;
+  appearance: none;
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+input[type='checkbox']:hover {
+  background-color: #4c74c454;
+}
+
+input[type='checkbox']:checked {
+  content: 'L';
+  background-color: #4c75c4;
+}
+
+.check_name {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+}
+
+.check_name div {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  color: #333;
+  font-size: 15px;
+}
+
+/*#endregion Filter*/
+
+/*#region Searcher*/
+.search_bar {
+  display: flex;
+  align-items: center;
+}
+
+.search_bar textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; 
+  width: 95%;
+  height: 45px;
+  padding: 8px 15px 0px 15px;
+  border-radius: 50px;
+  background-color: transparent;
+  font-size: 15px;
+  color: #333333bb;
+  font-weight: 500;
+  border: solid 2px #33333349;
+  transition-duration: 0.1s;
+  resize: none;
+  outline-offset: 0px !important;
+outline: none !important;
+}
+
+.search_bar textarea:hover {
+  border: solid 2px #4c74c452;
+  background-color: #4c75c415;
+}
+
+.search_bar textarea:focus-visible {
+  border: solid 2px #4c75c4 !important;
+  background-color: #4c75c415;
+}
+/*#endregion*/

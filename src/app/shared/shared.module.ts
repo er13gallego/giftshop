@@ -42,6 +42,7 @@ import {
   MatProgressSpinnerModule,
 } from '@angular/material';
 import { CardComponent } from './components/card/card.component';
+import { ProductComponent } from './components/product/product.component';
 
 const imports = [
   CommonModule,
@@ -81,7 +82,7 @@ const declarations = [
 ];
 
 @NgModule({
-  declarations: [...declarations],
+  declarations: [...declarations, ProductComponent],
   imports: [...imports, RouterModule, NgbPaginationModule],
   exports: [...declarations, ...imports],
   providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],

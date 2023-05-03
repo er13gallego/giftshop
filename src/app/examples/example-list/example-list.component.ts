@@ -18,6 +18,18 @@ export class ExampleListComponent extends ComponentBase
   private _paginatedRequest: PaginatedRequest = {};
   page: PaginatedResult<Example>;
 
+  filters: any[] = [
+    { name: 'V neck' },
+    { name: 'U neck' },
+    { name: 'No Sleeve' },
+    { name: 'Short Sleeve' },
+    { name: 'Long Sleeve' },
+    { name: 'Small Size' },
+    { name: 'Medium Size' },
+    { name: 'Large Size' },
+    { name: 'Extra Large Size' }
+]
+
   constructor(
     private _examplesService: ExamplesService,
     private _messageBox: MessageBoxService,
@@ -27,7 +39,7 @@ export class ExampleListComponent extends ComponentBase
   }
 
   ngOnInit() {
-    // this.getPage(1);
+    this.getPage(1);
   }
 
   getPage(page: number) {
