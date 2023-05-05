@@ -79,10 +79,11 @@ const declarations = [
   TablesortColDirective,
   EnumPipe,
   YesNoPipe,
+  ProductComponent
 ];
 
 @NgModule({
-  declarations: [...declarations, ProductComponent],
+  declarations: [...declarations],
   imports: [...imports, RouterModule, NgbPaginationModule],
   exports: [...declarations, ...imports],
   providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
