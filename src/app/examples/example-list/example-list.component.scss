@@ -4,11 +4,12 @@
   margin: auto;
   padding: 50px 0px 50px 0px;
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 5fr minmax(180px, 1fr);
 }
 
 .table_content {
   display: grid;
+  max-height: 88vh;
   grid-template-rows: 1fr 10fr 1fr;
 }
 
@@ -137,9 +138,7 @@ input[type='checkbox']:checked {
 
 /*#endregion*/
 
-/*#region Products*/
 .product_list {
-    margin-top: 40px;
-    width: fit-content;
+  overflow-y: auto;
+  
 }
-/*#endregion*/

@@ -19,15 +19,15 @@ export class ExampleListComponent extends ComponentBase
   page: PaginatedResult<Example>;
 
   filters: any[] = [
-    { name: 'V neck' },
-    { name: 'U neck' },
-    { name: 'No Sleeve' },
-    { name: 'Short Sleeve' },
-    { name: 'Long Sleeve' },
+    { name: 'White' },
+    { name: 'Black' },
+    { name: 'Blue' },
+    { name: 'Purple' },
+    { name: 'Yellow' },
+    { name: 'Brown' },
     { name: 'Small Size' },
     { name: 'Medium Size' },
-    { name: 'Large Size' },
-    { name: 'Extra Large Size' }
+    { name: 'Large Size' }
 ]
 
   constructor(

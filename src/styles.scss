@@ -43,10 +43,31 @@ body {
 html {
   width: 100vw;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 
 input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dfdfdf;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

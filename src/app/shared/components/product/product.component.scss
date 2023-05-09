@@ -1,19 +1,26 @@
 .product_block {
-    float: left;
-    height: 320px;
-    width: 220px;
+  display: grid;
+  position: relative;
+    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, 230px);
+    margin-left: 5px;
+
 }
 
 .product_container {
   display: grid;
   grid-template-rows: 3fr 2fr;
-  border: #33333380 1px solid;
+  border: transparent 1px solid;
   border-radius: 12px;
-  margin-right: 20px;
+  margin-right: 25px;
+  margin-bottom: 25px;
   transition-duration: 0.1s;
+  box-shadow: 0px 0px 2px #33333380;
 
   &:hover {
     border: #4c75c4 1px solid;
+    background-color: #3333330c;
+    cursor: pointer;
   }
 }
 
@@ -29,7 +36,7 @@
   position: absolute;
   height: 12px;
   width: 12px;
-  fill: #33333360;
+  fill: #33333333;
 }
 
 .picture_edit_icon {
