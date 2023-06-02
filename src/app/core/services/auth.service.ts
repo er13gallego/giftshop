@@ -93,7 +93,7 @@ export class AuthService {
     return this._httpClient.post<LoginResult>(`${this._url}login`, model);
   }
 
-  public logOut(timedOut: boolean = false): void {
+  public logOut(timedOut: boolean = true): void {
     this._httpClient.post<void>(`${this._url}logout`, {})
       .pipe(finalize(() => {
         this._redirect.toLogin(timedOut, timedOut ? RedirectReason.TimeOut : RedirectReason.LogOut);

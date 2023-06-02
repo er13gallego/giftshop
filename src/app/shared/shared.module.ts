@@ -43,6 +43,10 @@ import {
 } from '@angular/material';
 import { CardComponent } from './components/card/card.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductAddEditComponent } from './dialogs/product-add-edit/product-add-edit.component';
+import { InfoModalComponent } from './dialogs/info-modal/info-modal.component';
+import { FiltersComponent } from './dialogs/filters/filters.component';
+import { CartComponent } from '../examples/cart/cart.component';
 
 const imports = [
   CommonModule,
@@ -60,7 +64,8 @@ const imports = [
   MatButtonModule,
   MatCheckboxModule,
   MatDialogModule,
-  MatProgressSpinnerModule,
+  MatProgressSpinnerModule
+  
 ];
 
 const declarations = [
@@ -79,13 +84,17 @@ const declarations = [
   TablesortColDirective,
   EnumPipe,
   YesNoPipe,
-  ProductComponent
+  ProductComponent,
+  ProductAddEditComponent,
+  InfoModalComponent,
+  FiltersComponent
 ];
 
 @NgModule({
   declarations: [...declarations],
   imports: [...imports, RouterModule, NgbPaginationModule],
   exports: [...declarations, ...imports],
-  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter }],
+  providers: [{ provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}],
+  entryComponents: [ProductAddEditComponent, InfoModalComponent, FiltersComponent]
 })
 export class SharedModule {}

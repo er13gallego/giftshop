@@ -1,0 +1,50 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    Filters
+
+    <div class="clear_text">Clear</div>
+  </div>
+
+  <div class="filter-container">
+    <div *ngFor="let filter of filters; let i = index" class="filter">
+        <span>
+          <span class="filter_name">{{ filter.name }}</span>
+          <span *ngIf="filter.objects">
+            <span *ngFor="let object of filter.objects" class="filter_elements">
+              <div class="check_name">
+                <div>
+                  <input type="checkbox" name="{{ object.name }}" />
+                </div>
+    
+                <div>
+                  {{ object.name }}
+                </div>
+              </div>
+            </span>
+          </span>
+        </span>
+      </div>
+  </div>
+  
+
+  <div class="button">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      Apply
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-secondary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+      (click)="close()"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

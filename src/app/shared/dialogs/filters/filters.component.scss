@@ -1,0 +1,129 @@
+.dialog-container {
+  display: grid;
+  grid-template-rows: 45px auto 75px;
+}
+
+.dialog-header {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333bb;
+  position: relative;
+}
+
+.filters_menu {
+  margin-top: 103px;
+  position: relative;
+  border-top: solid 1px #ccc;
+  padding-top: 12px;
+}
+
+.clear_text {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4c75c4;
+  border-radius: 8px;
+  padding: 5px 12px 5px 12px;
+  transition-duration: 0.1s;
+
+  &:hover {
+    background-color: #4c74c42d;
+    cursor: pointer;
+  }
+}
+
+.title_filter_text {
+  position: absolute;
+  top: -35px;
+  left: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333cc;
+  border-radius: 8px;
+  padding: 5px 12px 5px 12px;
+  transition-duration: 0.1s;
+}
+
+.filter {
+  padding: 4px 6px 4px 4px;
+  padding-left: 7px;
+  border: solid #597baf4d 1px;
+  border-radius: 4px;
+  transition-duration: 0.1s;
+  margin-bottom: 5px;
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.filter:hover {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  height: 15px;
+  width: 15px;
+  border: solid 1px #4c75c4;
+  border-radius: 3px;
+  appearance: none;
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+input[type='checkbox']:hover {
+  background-color: #4c74c446;
+}
+
+input[type='checkbox']:checked {
+  background-color: #4c74c4bd;
+}
+
+.check_name {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border: solid #597baf4d 1px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.check_name div {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  color: #333;
+  font-size: 15px;
+}
+
+.filters {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.filter-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 125px);
+  column-gap: 15px;
+}
+
+.btn-danger {
+    background-color: #dc3546dd;
+    border-color: #dc3546dd;
+}
+
+.btn {
+    height: 40px;
+    width: 100px;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.filter_name {
+    margin-bottom: 10px !important;
+}

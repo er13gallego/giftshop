@@ -1,0 +1,35 @@
+.dialog-container {
+display: grid;
+grid-template-rows: 45px auto 45px;
+}
+
+.dialog-header {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333bb;
+}
+
+.info {
+    font-size: 15px;
+    color: #333333cc;
+    margin-bottom: 25px;
+}
+
+.info-name {
+    font-weight: 500;
+}
+
+.btn-danger {
+    background-color: #dc3546dd;
+    border-color: #dc3546dd;
+}
+
+.btn {
+    height: 45px;
+    width: 120px;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -37,13 +37,15 @@
 @import './styles/buttons';
 
 body {
-  background-color: #ebeff5;
+  background-color: #ecf0f1;
+  // min-width: 450px;
 }
 
 html {
   width: 100vw;
   height: 100vh;
   scroll-behavior: smooth;
+  
 }
 
 input {
@@ -70,4 +72,10 @@ input {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-dialog-container {
+  border-radius: 12px !important;
 }

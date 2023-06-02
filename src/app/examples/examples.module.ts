@@ -7,9 +7,10 @@ import { ExamplesService } from './services/examples.service';
 import { ExampleEditComponent } from './example-edit/example-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [ExampleListComponent, ExampleEditComponent],
+  declarations: [ExampleListComponent, ExampleEditComponent, CartComponent],
   imports: [
     SharedModule,
     FormsModule,

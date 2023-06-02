@@ -13,7 +13,7 @@ import { AppValidators } from '../../common/app-validators';
 enum Stage {
   Login,
   Lockout,
-  TwoFactor
+  TwoFactor,
 }
 
 function getLoginStatusMessage(status: LoginStatus): Translation {
@@ -23,10 +23,9 @@ function getLoginStatusMessage(status: LoginStatus): Translation {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-
   public form: FormGroup;
   public submitted = false;
   public readonly Stage = Stage;
@@ -39,16 +38,19 @@ export class LoginComponent {
     private _errorHandler: ErrorHandlerService,
     private _notificationService: NotificationService,
     private _redirectService: RedirectService,
-    private _loginService: LoginService) {
-
+    private _loginService: LoginService
+  ) {
     this.form = fb.group({
       email: ['', [Validators.required, AppValidators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
     });
 
     this._redirectService.reset();
   }
 
+  ngOnInit() {
+    
+  }
 
   submit() {
     if (this.submitting) {
@@ -63,8 +65,8 @@ export class LoginComponent {
     const model = this.form.value;
 
     this.submitting = true;
-    this._loginService.login(model)
-      .subscribe((result) => {
+    this._loginService.login(model).subscribe(
+      result => {
         switch (result.status) {
           case LoginStatus.Success:
             setTimeout(() => {
@@ -78,7 +80,9 @@ export class LoginComponent {
           case LoginStatus.NotAllowed:
           case LoginStatus.Failed:
           case LoginStatus.NotConfirmed:
-            this._notificationService.error(getLoginStatusMessage(result.status));
+            this._notificationService.error(
+              getLoginStatusMessage(result.status)
+            );
             break;
           case LoginStatus.RequiresTwoFactor:
             // TODO: Process two factor authentication
@@ -89,10 +93,12 @@ export class LoginComponent {
             break;
         }
         this.submitting = false;
-      }, error => {
+      },
+      error => {
         this._errorHandler.handle(error);
         this.submitting = false;
-      });
+      }
+    );
   }
 
   onPasswordUpdated() {

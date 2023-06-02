@@ -2,21 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ExampleListComponent } from './example-list/example-list.component';
-import { ExampleEditComponent } from './example-edit/example-edit.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ExampleListComponent,
+    path: 'products',
+    component: ExampleListComponent
   },
   {
-    path: 'new',
-    component: ExampleEditComponent,
-  },
-  {
-    path: ':id/edit',
-    component: ExampleEditComponent,
-  },
+    path: 'cart',
+    component: CartComponent,
+  }
 ];
 
 @NgModule({

@@ -55,6 +55,10 @@
       "LOCKED_OUT": "Account Locked Out",
       "FORGOT_PASSWORD": "Forgot Password"
     },
+    "sign-up": {
+      "$TITLE": "Sign Up",
+      "SIGN_UP": "Register"
+    },
     "forgotPassword": {
       "$TITLE": "Forgot Password",
       "CONFIRMATION": "Please check your email to reset your password."
@@ -81,7 +85,8 @@
     }
   },
   "examples": {
-    "$TITLE": "Examples",
+    "$TITLE": "Products",
+    "CART": "Cart",
     "NAME": "Name",
     "EMAIL": "Email",
     "ADD": "Add Example",

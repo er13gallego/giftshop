@@ -5,39 +5,31 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
 import { ErrorComponent } from './error/error.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { MainComponent } from './main/main.component';
+import { LoggedGuard } from './core/guards/logged.guard';
 
 const routes: Routes = [
   {
     path: 'auth',
     component: LayoutComponent,
-    loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './auth/auth.module#AuthModule',
+    // canActivate: [LoggedGuard]
   },
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuard],
+    loadChildren: './examples/examples.module#ExamplesModule',
     data: {
-      title: 'app.HOME'
+      title: 'app.HOME',
     },
-    children: [
-      {
-        path: 'examples',
-        component: LayoutComponent,
-        loadChildren: './examples/examples.module#ExamplesModule',
-        data: {
-          title: 'examples.$TITLE'
-        }
-      },
-    ]
   },
   {
     path: 'error',
     component: ErrorComponent,
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

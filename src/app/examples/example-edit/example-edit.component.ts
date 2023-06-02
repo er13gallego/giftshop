@@ -41,55 +41,56 @@ export class ExampleEditComponent extends ComponentBase implements OnInit {
   }
 
   ngOnInit() {
-    this.exampleId = this._route.snapshot.paramMap.get('id');
+    // this.exampleId = this._route.snapshot.paramMap.get('id');
 
-    if (this.exampleId) {
-      this.setEditMode();
+    // if (this.exampleId) {
+    //   this.setEditMode();
 
-      this.get(this.exampleId);
-    } else {
-      this.setAddMode();
-    }
-  }
-  submit() {
-    this.submitted = true;
-    if (this.form.invalid) {
-      return;
-    }
-
-    const model = this.form.getRawValue();
-
-    if (this.exampleId) {
-      this.registerRequest(
-        this._examplesService.update(this.exampleId, model)
-      ).subscribe(
-        () => {
-          this.form.markAsPristine();
-          this.handleSuccess();
-        },
-        errorResponse => {
-          this._errorHandler.handle(errorResponse);
-        }
-      );
-    } else {
-      this.registerRequest(this._examplesService.save(model)).subscribe(
-        () => {
-          this.form.markAsPristine();
-          this.handleSuccess();
-        },
-        errorResponse => {
-          this._errorHandler.handle(errorResponse);
-        }
-      );
-    }
+    //   this.get(this.exampleId);
+    // } else {
+    //   this.setAddMode();
+    // }
   }
 
-  private get(exampleId: string) {
-    this.registerRequest(this._examplesService.get(exampleId)).subscribe({
-      next: queryResult => this.form.patchValue(queryResult),
-      error: errorResponse => this._errorHandler.handle(errorResponse),
-    });
-  }
+  // submit() {
+  //   this.submitted = true;
+  //   if (this.form.invalid) {
+  //     return;
+  //   }
+
+  //   const model = this.form.getRawValue();
+
+  //   if (this.exampleId) {
+  //     this.registerRequest(
+  //       this._examplesService.update(this.exampleId, model)
+  //     ).subscribe(
+  //       () => {
+  //         this.form.markAsPristine();
+  //         this.handleSuccess();
+  //       },
+  //       errorResponse => {
+  //         this._errorHandler.handle(errorResponse);
+  //       }
+  //     );
+  //   } else {
+  //     this.registerRequest(this._examplesService.save(model)).subscribe(
+  //       () => {
+  //         this.form.markAsPristine();
+  //         this.handleSuccess();
+  //       },
+  //       errorResponse => {
+  //         this._errorHandler.handle(errorResponse);
+  //       }
+  //     );
+  //   }
+  // }
+
+  // private get(exampleId: string) {
+  //   this.registerRequest(this._examplesService.get(exampleId)).subscribe({
+  //     next: queryResult => this.form.patchValue(queryResult),
+  //     error: errorResponse => this._errorHandler.handle(errorResponse),
+  //   });
+  // }
 
   private back() {
     this._router.navigate(['../'], { relativeTo: this._route });

@@ -1,0 +1,75 @@
+<div class="cont">
+  Add Product
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="close"
+    viewBox="0 0 384 512"
+    (click)="close()"
+  >
+    <path
+      d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+    />
+  </svg>
+
+  <form class="product_form" [formGroup]="productForm">
+    <div>
+      <label>Product Name </label>
+      <input type="text" formControlName="name" />
+    </div>
+
+    <div class="grid-col-3">
+      <div>
+        <label>Category </label>
+        <select formControlName="cat" (change)="changeValue(1, $event.target.value)">
+          <option value=""></option>
+          <option value="{{cat.id}}" *ngFor="let cat of cats" >{{ cat.name }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Size </label>
+        <select formControlName="size" (change)="changeValue(2, $event.target.value)">
+          <option value=""></option>
+          <option value="{{size.id}}" *ngFor="let size of sizes">{{ size.name }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Color </label>
+        <select formControlName="color" (change)="changeValue(3, $event.target.value)">
+          <option value=""></option>
+          <option value="{{col.id}}" *ngFor="let col of cols" >{{ col.name }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-col-2">
+      <div>
+        <label>Quantity </label>
+        <input type="number" formControlName="stock" />
+      </div>
+
+      <div>
+        <label>Price </label>
+        <input type="number" formControlName="price" />
+      </div>
+    </div>
+
+    <div class="pic_container">
+        <div class="prod_pic">
+            <svg xmlns="http://www.w3.org/2000/svg" class="no_pic" viewBox="0 0 512 512">
+                <path
+                  d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
+                />
+              </svg>
+        </div>
+    </div>
+
+    <div class="buttons_container">
+        <div class="buttons">
+            <div class="button submit" (click)="submit()">{{action}}</div>
+            <div class="button cancel" (click)="close()">Cancel</div>
+        </div>
+    </div>
+  </form>
+</div>
